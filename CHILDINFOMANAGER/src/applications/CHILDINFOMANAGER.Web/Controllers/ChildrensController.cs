@@ -28,6 +28,13 @@ public class ChildrensController : Controller
         return View(children);
     }
 
+    // GET: ChildrensRaw
+    public async Task<IActionResult> ChildrensRaw()
+    {
+        var children = await _mediator.Send(new GetAllChildrenByStoredProcedureQuery());
+        return View("ChildrensRaw", children);
+    }
+
     // GET: Children/Details/5
     public async Task<IActionResult> Details(Guid id)
     {
@@ -50,6 +57,19 @@ public class ChildrensController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("FirstName,LastName,DateOfBirth,PhoneNumber,HomeAddress")] CreateChildrenCommand command)
+    {
+        if (ModelState.IsValid)
+        {
+            await _mediator.Send(command);
+            return RedirectToAction(nameof(Index));
+        }
+        return View(command);
+    }
+
+    // POST: Children/Create
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> CreateByStoredProcedure([Bind("FirstName,LastName,DateOfBirth,PhoneNumber,HomeAddress")] CreateChildrenByStoredProcedureCommand command)
     {
         if (ModelState.IsValid)
         {
