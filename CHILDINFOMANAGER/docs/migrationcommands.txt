@@ -1,0 +1,5 @@
+Add: dotnet ef migrations add Initial_Migration -c ApplicationDbContext -s .\src\applications\CHILDINFOMANAGER.Web -o Data/Migrations
+
+Update: dotnet ef database update -c ApplicationDbContext -s .\src\applications\CHILDINFOMANAGER.Web
+
+Remove: dotnet ef migrations remove -c ApplicationDbContext -s .\src\applications\CHILDINFOMANAGER.Web --force
