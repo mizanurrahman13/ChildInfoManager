@@ -32,6 +32,13 @@ To get a local copy up and running, follow these simple steps.
    ```sh
    dotnet restore
    ```
+4. Migrations:
+   ```sh
+   dotnet ef migrations add Initial_Migration -c ApplicationDbContext -s .\src\applications\CHILDINFOMANAGER.Web -o Data/Migrations
+   ```
+   ```sh
+   dotnet ef database update -c ApplicationDbContext -s .\src\applications\CHILDINFOMANAGER.We
+   ```
 
 ## Architecture Overview
 
