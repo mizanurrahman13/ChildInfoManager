@@ -1,4 +1,4 @@
-# ChildInfoManager MVC Project with .NET 9, Aspire, CQRS, Repository and UnitOfWork SP, MSSQL and NUnit Testing
+# ChildInfoManager MVC Project with .NET 9, Aspire, CQRS, Repository and UnitOfWork, Stored Porcedure, MSSQL and NUnit Testing
 
 This repository showcases a sample MVC Project built with .NET 9 that demonstrates the integration of .NET Aspire orchestration. The application utilizes Repository, UnitOfWork and CQRS Design Pattern. Together, these components provide a robust foundation for structured web Project.
 
